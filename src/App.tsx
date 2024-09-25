@@ -1,4 +1,5 @@
-import { useState } from "react";
+import Dashboard from "./components/Dashboard.tsx";
+import { useEffect, useState } from "react";
 
 export default () => {
     const [amount, setAmount] = useState(0);
@@ -7,15 +8,24 @@ export default () => {
         setAmount((amount) => amount + money);
     };
 
-    const setTimer = (time: Number) => {
-        return time;
+    const buyCompany = (money: number) => {
+        setAmount((amount) => amount + money);
     };
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            makeMoney(15);
+        }, 1000);
+
+        return () => clearInterval(intervalId);
+    }, []);
 
     return (
         <>
+            <Dashboard />
             <button onClick={() => makeMoney(1)}>Farm</button>
-            <h1>{amount}</h1>
-            <div onClick={() => makeMoney(15)}>
+            <h1>R${amount}</h1>
+            <div onClick={() => buyCompany(amount)}>
                 npc-make-money +15 a cada 5s
             </div>
         </>
