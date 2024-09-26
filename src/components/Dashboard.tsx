@@ -10,7 +10,11 @@ export default () => {
             <header className="dashboard-header">
                 <nav className="dash-title">
                     <h1>Loja</h1>
-                    <button onClick={() => setHideShop(false)}>vvv</button>
+                    <button
+                        onClick={() => setHideShop((prevState) => !prevState)}
+                    >
+                        {hideShop ? "vvv" : "^^^"}
+                    </button>
                 </nav>
                 <ul className={`dashboard-list ${hideShop && "d-none"}`}>
                     <li className="item-dash">
@@ -22,7 +26,7 @@ export default () => {
                     <li className="item-dash">
                         <img src={Brock} alt="item" />
                         <div>
-                            <button className="btn-dash">50$</button>
+                            <button className="btn-dash">100$</button>
                         </div>
                     </li>
                 </ul>

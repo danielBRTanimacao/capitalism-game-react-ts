@@ -12,7 +12,7 @@ export default () => {
         setIdle(moveSprite);
         setInterval(() => {
             setIdle(idleSprite);
-        }, 500);
+        }, 600);
     };
 
     const digMoney = () => {
@@ -25,7 +25,7 @@ export default () => {
     };
 
     const buyCompany = (money: number) => {
-        setAmount((amount) => amount + money);
+        setAmount(amount - money);
     };
 
     useEffect(() => {
@@ -39,16 +39,18 @@ export default () => {
     return (
         <>
             <Dashboard />
-            <div>
-                <img src={idle} alt="img-npc" />
-                <button onClick={() => digMoney()}>CAVAR</button>
-                <h1>R${amount}</h1>
-            </div>
-            <div>
-                <div onClick={() => buyCompany(amount)}>
-                    npc-make-money +15 a cada 5s
+            <main>
+                <div>
+                    <img src={idle} alt="img-npc" />
+                    <button onClick={() => digMoney()}>CAVAR</button>
+                    <h1>R${amount}</h1>
                 </div>
-            </div>
+                <div>
+                    <div onClick={() => buyCompany(15)}>
+                        npc-make-money +15 a cada 5s
+                    </div>
+                </div>
+            </main>
         </>
     );
 };
