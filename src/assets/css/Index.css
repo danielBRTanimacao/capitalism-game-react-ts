@@ -33,6 +33,34 @@ button:hover {
     display: none;
 }
 
+/* INDEX */
+.center-div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.cave-btn {
+    border-radius: 5px 5px 0 0;
+    padding: 10px 48px;
+    background: rgb(13, 99, 56);
+    background: linear-gradient(
+        180deg,
+        rgb(10, 73, 42) 0%,
+        rgb(164, 74, 14) 32%
+    );
+    color: white;
+    font-size: larger;
+    font-weight: 600;
+}
+.cave-btn:hover {
+    background: rgb(13, 99, 56);
+    background: linear-gradient(
+        180deg,
+        rgb(7, 48, 27) 0%,
+        rgb(119, 54, 10) 32%
+    );
+}
+
 /* DASHBOARD */
 .dash-title {
     display: flex;

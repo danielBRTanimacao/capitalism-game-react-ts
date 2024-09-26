@@ -5,6 +5,24 @@ import Brock from "../assets/sprites-npc/brock.png";
 export default () => {
     const [hideShop, setHideShop] = useState(true);
 
+    class NpcObjects {
+        img: string;
+        purchased: boolean;
+        price: number;
+        money_maked: number;
+        seconds: number;
+
+        constructor(img: string, price: number) {
+            this.img = img;
+            this.purchased = false;
+            this.price = price;
+            this.money_maked = 0;
+            this.seconds = 0;
+        }
+    }
+
+    const miner = new NpcObjects(Miner, 50);
+
     return (
         <>
             <header className="dashboard-header">
@@ -18,7 +36,7 @@ export default () => {
                 </nav>
                 <ul className={`dashboard-list ${hideShop && "d-none"}`}>
                     <li className="item-dash">
-                        <img src={Miner} alt="item" />
+                        <img src={miner.img} alt="item" />
                         <div>
                             <button className="btn-dash">50$</button>
                         </div>

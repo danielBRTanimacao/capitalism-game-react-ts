@@ -40,11 +40,13 @@ export default () => {
         <>
             <Dashboard />
             <main>
-                <div>
+                <div className="center-div">
                     <img src={idle} alt="img-npc" />
-                    <button onClick={() => digMoney()}>CAVAR</button>
-                    <h1>R${amount}</h1>
+                    <button className="cave-btn" onClick={() => digMoney()}>
+                        CAVAR
+                    </button>
                 </div>
+                <h1>R${amount}</h1>
                 <div>
                     <div onClick={() => buyCompany(15)}>
                         npc-make-money +15 a cada 5s
