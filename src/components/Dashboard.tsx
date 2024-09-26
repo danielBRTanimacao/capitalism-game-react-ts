@@ -38,7 +38,13 @@ export default () => {
                     <li className="item-dash">
                         <img src={miner.img} alt="item" />
                         <div>
-                            <button className="btn-dash">50$</button>
+                            {!miner.purchased ? (
+                                <button className="btn-dash">
+                                    {miner.price}$
+                                </button>
+                            ) : (
+                                <button className="btn-dash disabled">X</button>
+                            )}
                         </div>
                     </li>
                     <li className="item-dash">

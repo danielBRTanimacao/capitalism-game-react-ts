@@ -95,3 +95,8 @@ button:hover {
 .btn-dash:hover {
     background-color: darkgreen;
 }
+
+.btn-dash.disabled {
+    background-color: darkgreen;
+    cursor: auto;
+}
