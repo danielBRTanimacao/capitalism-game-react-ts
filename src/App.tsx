@@ -60,11 +60,11 @@ export default () => {
                         <h2 style={{ color: "red" }}>-R${company.value}</h2>
                     )}
                 </div>
-                <div>
+                <article>
                     <div onClick={() => buyCompany(5)}>
                         npc-make-money +15 a cada 5s
                     </div>
-                </div>
+                </article>
             </main>
         </>
     );
