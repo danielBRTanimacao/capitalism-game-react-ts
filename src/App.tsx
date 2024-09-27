@@ -6,6 +6,7 @@ import ShovelTake from "./assets/sprites-npc/shovel-move.png";
 
 export default () => {
     const [amount, setAmount] = useState(0);
+    const [company, setCompany] = useState({ buy: false, value: 0 });
     const [idle, setIdle] = useState(Shovel);
 
     const changeAnimation = (idleSprite: string, moveSprite: string) => {
@@ -25,7 +26,14 @@ export default () => {
     };
 
     const buyCompany = (money: number) => {
+        if (money > amount) {
+            return setCompany({ buy: false, value: 0 });
+        }
         setAmount(amount - money);
+        setCompany({ buy: true, value: money });
+        setInterval(() => {
+            setCompany({ buy: false, value: 0 });
+        }, 1000);
     };
 
     useEffect(() => {
@@ -46,9 +54,14 @@ export default () => {
                         CAVAR
                     </button>
                 </div>
-                <h1>R${amount}</h1>
+                <div className="center-div">
+                    <h1>R${amount}</h1>
+                    {company.buy && (
+                        <h2 style={{ color: "red" }}>-R${company.value}</h2>
+                    )}
+                </div>
                 <div>
-                    <div onClick={() => buyCompany(15)}>
+                    <div onClick={() => buyCompany(5)}>
                         npc-make-money +15 a cada 5s
                     </div>
                 </div>

@@ -2,6 +2,8 @@
 
 :root {
     --light-bg: #efefef;
+    --dark-green: rgb(13, 99, 56);
+    --more-dark-green: rgb(10, 70, 37);
 }
 
 /* CONFIGURAÇÕES GERAIS */
@@ -39,26 +41,21 @@ button:hover {
     align-items: center;
     flex-direction: column;
 }
+
+.center-div h2 {
+    position: fixed;
+    top: 56%;
+}
 .cave-btn {
-    border-radius: 5px 5px 0 0;
+    border-radius: 5px;
     padding: 10px 48px;
-    background: rgb(13, 99, 56);
-    background: linear-gradient(
-        180deg,
-        rgb(10, 73, 42) 0%,
-        rgb(164, 74, 14) 32%
-    );
+    background: var(--dark-green);
     color: white;
     font-size: larger;
     font-weight: 600;
 }
 .cave-btn:hover {
-    background: rgb(13, 99, 56);
-    background: linear-gradient(
-        180deg,
-        rgb(7, 48, 27) 0%,
-        rgb(119, 54, 10) 32%
-    );
+    background: var(--more-dark-green);
 }
 
 /* DASHBOARD */

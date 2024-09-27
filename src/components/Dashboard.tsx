@@ -22,6 +22,7 @@ export default () => {
     }
 
     const miner = new NpcObjects(Miner, 50);
+    const drill = new NpcObjects(Brock, 100);
 
     return (
         <>
@@ -48,9 +49,13 @@ export default () => {
                         </div>
                     </li>
                     <li className="item-dash">
-                        <img src={Brock} alt="item" />
+                        <img src={drill.img} alt="item" />
                         <div>
-                            <button className="btn-dash">100$</button>
+                            {!drill.purchased ? (
+                                <button className="btn-dash">100$</button>
+                            ) : (
+                                <button className="btn-dash disabled">X</button>
+                            )}
                         </div>
                     </li>
                 </ul>
