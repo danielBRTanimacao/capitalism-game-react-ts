@@ -46,7 +46,7 @@ export default () => {
 
     return (
         <>
-            <Dashboard />
+            <Dashboard func_buy={buyCompany} />
             <main>
                 <div className="center-div">
                     <img src={idle} alt="img-npc" />
@@ -61,9 +61,7 @@ export default () => {
                     )}
                 </div>
                 <article>
-                    <div onClick={() => buyCompany(5)}>
-                        npc-make-money +15 a cada 5s
-                    </div>
+                    <div>npc-make-money +15 a cada 5s</div>
                 </article>
             </main>
         </>

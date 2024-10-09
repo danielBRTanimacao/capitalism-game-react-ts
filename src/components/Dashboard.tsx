@@ -40,7 +40,10 @@ export default () => {
                         <img src={miner.img} alt="item" />
                         <div>
                             {!miner.purchased ? (
-                                <button className="btn-dash">
+                                <button
+                                    className="btn-dash"
+                                    onClick={() => func_buy(5)}
+                                >
                                     {miner.price}$
                                 </button>
                             ) : (
